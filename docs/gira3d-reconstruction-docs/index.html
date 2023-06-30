@@ -1,0 +1,843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+    
+    
+      
+        <title>GIRA3D Reconstruction - GIRA3D Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gira3d-reconstruction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="GIRA3D Docs" class="md-header__button md-logo" aria-label="GIRA3D Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GIRA3D Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GIRA3D Reconstruction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gira3d/gira3d-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gira3d/gira3d-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="GIRA3D Docs" class="md-nav__button md-logo" aria-label="GIRA3D Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    GIRA3D Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gira3d/gira3d-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gira3d/gira3d-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Reconstruction Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reconstruction Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials/sogmm-tut/sogmm-tut.html" class="md-nav__link">
+        Point Cloud Modeling using Self-Organizing Gaussian Mixture Models (SOGMM)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gira3d-benchmarking-docs/tutorials/octomap-py-tut/octomap-py-tut.html" class="md-nav__link">
+        (Intensity) OctoMap Python Bindings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gira3d-benchmarking-docs/tutorials/ndtmap-py-tut/ndtmap-py-tut.html" class="md-nav__link">
+        (Intensity) NDTMap Python Bindings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Registration Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Registration Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gira3d-registration-docs/tutorials/matlab/matlab.html" class="md-nav__link">
+        MATLAB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gira3d-registration-docs/tutorials/python/python.html" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Occupancy Modeling Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Occupancy Modeling Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gira3d-occupancy-modeling-docs/tutorials/matlab/matlab.html" class="md-nav__link">
+        MATLAB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gira3d-occupancy-modeling-docs/tutorials/python/python.html" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-platforms" class="md-nav__link">
+    Supported Platforms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-and-install" class="md-nav__link">
+    Build and Install
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    Environment Setup
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    User Guide
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authors" class="md-nav__link">
+    Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgments" class="md-nav__link">
+    Acknowledgments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="gira3d-reconstruction">GIRA3D Reconstruction<a class="headerlink" href="#gira3d-reconstruction" title="Permanent link">&para;</a></h1>
+<p>This component of GIRA3D enables compact point cloud modeling for depth-intensity reconstruction. The point
+cloud modeling is performed via Self-Organizing Gaussian Mixture Modeling (SOGMM) presented in:</p>
+<pre><code>[1] K. Goel, N. Michael, and W. Tabib, “Probabilistic Point Cloud Modeling via Self-Organizing Gaussian Mixture Models,” IEEE Robotics and Automation Letters, vol. 8, no. 5, pp. 2526–2533, May 2023, doi: 10.1109/LRA.2023.3256923.
+</code></pre>
+<pre><code>@ARTICLE{goel_probabilistic_2023,
+  title = {Probabilistic Point Cloud Modeling via Self-Organizing Gaussian Mixture Models},
+  author = {Goel, Kshitij and Michael, Nathan and Tabib, Wennie},
+  year = {2023},
+  month = may,
+  journal={IEEE Robotics and Automation Letters},
+  volume = {8},
+  number = {5},
+  pages = {2526--2533},
+  issn = {2377-3766},
+  doi = {10.1109/LRA.2023.3256923},
+  keywords = {Adaptation models,Complexity theory,Computational modeling,Data models,field robots,Mapping,Point cloud compression,Probabilistic logic,RGB-D perception,Three-dimensional displays}
+}
+</code></pre>
+<p>A video demonstrating the features of SOGMM can be found <a href="https://youtu.be/v0DfhK1lyno">here</a>.</p>
+<p>If you use this codebase in your work, please consider citing the article above.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This repository is a meta workspace containing two <a href="https://colcon.readthedocs.io/en/released/"><code>colcon</code></a> workspaces:</p>
+<ol>
+<li>
+<p>The <code>dry</code> workspace contains dependencies that we choose to compile from their source code.</p>
+</li>
+<li>
+<p>The <code>wet</code> workspace contains the main codebase.</p>
+</li>
+</ol>
+<p>The <code>dry</code> workspace contains the following <code>git</code> submodules:</p>
+<ol>
+<li>
+<p><code>eigen_colcon</code>: Colcon package to pull <a href="https://eigen.tuxfamily.org/index.php?title=3.4">Eigen 3.4</a>.</p>
+</li>
+<li>
+<p><code>pybind11_colcon</code>: Colcon package to pull <a href="https://pybind11.readthedocs.io/en/stable/">pybind11</a>.</p>
+</li>
+<li>
+<p><code>open3d_colcon</code>: Colcon package to pull <a href="https://github.com/rislab/Open3D/tree/feature/cuda-12">our modifications</a> to <a href="http://www.open3d.org/">Open3D</a>.</p>
+<blockquote>
+<p><strong>Note</strong>
+<code>open3d_colcon</code> will not be compiled for macOS.</p>
+</blockquote>
+</li>
+<li>
+<p><code>pcl_colcon</code>: Colcon package to pull PCL.</p>
+<blockquote>
+<p><strong>Note</strong>
+<code>pcl_colcon</code> will be compiled without CUDA support on all platforms.</p>
+</blockquote>
+</li>
+<li>
+<p><code>ndt_map</code>: A copy of NDTMap with our modifications for comparison. The original codebase is <a href="https://github.com/OctoMap/octomap/tree/devel">here</a>.</p>
+</li>
+<li>
+<p><code>octomap</code>: A copy of the original OctoMap codebase with our modifications for comparison. The original codebase is <a href="https://github.com/OrebroUniversity/perception_oru/tree/port-kinetic">here</a>.</p>
+</li>
+</ol>
+<p>The <code>wet</code> workspace contains the following <code>git</code> submodules:</p>
+<ol>
+<li>
+<p><code>self_organizing_gmm</code>: C++ codebase accelerated with OpenMP for Intel/AMD/ARM CPUs.</p>
+</li>
+<li>
+<p><code>sogmm_open3d</code>: C++ codebase accelerated with CUDA and Open3D for Intel/AMD/ARM CPUs and NVIDIA GPUs.</p>
+<blockquote>
+<p><strong>Note</strong>
+<code>sogmm_open3d</code> will not be compiled for macOS.</p>
+</blockquote>
+</li>
+<li>
+<p><code>ndt_map_py</code>: Python bindings over <code>ndt_map</code>.</p>
+</li>
+<li>
+<p><code>octomap_py</code>: Python bindings over <code>octomap</code>.</p>
+</li>
+<li>
+<p><code>sogmm_py</code>: Scripts for visualization, comparison, testing, and profiling.</p>
+</li>
+</ol>
+<h2 id="supported-platforms">Supported Platforms<a class="headerlink" href="#supported-platforms" title="Permanent link">&para;</a></h2>
+<p>The codebase has been tested on the following platforms:</p>
+<ol>
+<li><strong>Linux</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Platform ID</th>
+<th>OS</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>Memory (CPU/GPU)</th>
+<th>CUDA Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ryzen/RTX3090</td>
+<td>Ubuntu 20.04</td>
+<td>AMD Ryzen Threadripper 3960X, 48 threads</td>
+<td>NVIDIA GeForce RTX 3090</td>
+<td>252 GB/24 GB</td>
+<td>&lt;= 12.1</td>
+</tr>
+<tr>
+<td>Intel/RTX3060</td>
+<td>Ubuntu 20.04</td>
+<td>Intel Core i9-10900K, 20 threads</td>
+<td>NVIDIA GeForce RTX 3060</td>
+<td>32 GB/12 GB</td>
+<td>&lt;= 12.1</td>
+</tr>
+<tr>
+<td>ARM-12c/Orin</td>
+<td>Ubuntu 20.04</td>
+<td>ARMv8 Processor rev 1 (v8l), 12 threads</td>
+<td>NVIDIA Jetson Orin</td>
+<td>32 GB</td>
+<td>&lt;= 11.4</td>
+</tr>
+<tr>
+<td>ARM-8c/Xavier</td>
+<td>Ubuntu 20.04</td>
+<td>ARMv8 Processor rev 0 (v8l), 8 threads</td>
+<td>NVIDIA Jetson Xavier</td>
+<td>16 GB</td>
+<td>&lt;= 11.4</td>
+</tr>
+<tr>
+<td>ARM-6c/TX2</td>
+<td>Ubuntu 20.04</td>
+<td>ARM Cortex-A57, 6 threads</td>
+<td>NVIDIA Jetson TX2</td>
+<td>8 GB</td>
+<td>&lt;= 10.1</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>macOS</strong><blockquote>
+<p><strong>Note</strong>
+CUDA-dependent repository, <code>sogmm_open3d</code>, is not supported for macOS.</p>
+</blockquote>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Platform ID</th>
+<th>OS</th>
+<th>CPU</th>
+<th>GPU</th>
+<th>Memory (CPU/GPU)</th>
+<th>CUDA Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MacBook/Intel</td>
+<td>MacOS Ventura 13.3.1</td>
+<td>2.3 GHz 8-Core Intel Core i9</td>
+<td>N/A</td>
+<td>16 GB</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="build-and-install">Build and Install<a class="headerlink" href="#build-and-install" title="Permanent link">&para;</a></h2>
+<details>
+<summary>Linux</summary>
+
+We require using a Python 3.8 virtual environment using `pip`. Assume that the
+virtual environment is created within this repository using the folder name
+`.venv`. First, we set up the `colcon` build environment.
+
+
+<pre><code class="language-bash">git clone git@github.com:rislab/gira3d-reconstruction.git
+git checkout master # or your favorite branch
+git submodule update --recursive --init
+cd gira3d-reconstruction
+python3.8 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install colcon-common-extensions wheel
+</code></pre>
+
+
+For Python scripts, run-time dependencies can be installed using `pip`. Make sure
+the virtual environment created above is active.
+
+<pre><code class="language-bash">pip install numpy open3d==0.16.0 scikit-learn opencv-python scikit-image future matplotlib termcolor
+</code></pre>
+
+
+Finally, run the `build` script:
+
+<pre><code class="language-bash">./build
+</code></pre>
+
+
+Some helper scripts are provided as follows:
+1. `clean`: Clean the builds for both `dry` and `wet` workspaces.
+2. `configure`: Pull the submodules.
+</details>
+
+<details>
+<summary>macOS</summary>
+We require using a Python 3.8 virtual environment using `pip`. Assume that the
+virtual environment is created within this repository using the folder name
+`.venv`. First, we set up the `colcon` build environment.
+
+
+<pre><code class="language-bash">git clone git@github.com:rislab/gira3d-reconstruction.git
+git checkout master # or your favorite branch
+git submodule update --recursive --init
+cd gira3d-reconstruction
+python3.8 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install colcon-common-extensions wheel
+</code></pre>
+
+
+For Python scripts, run-time dependencies can be installed using `pip`. Make sure
+the virtual environment created above is active.
+
+<pre><code class="language-bash">pip install numpy open3d==0.16.0 scikit-learn opencv-python scikit-image future matplotlib termcolor
+</code></pre>
+
+
+Finally, run the `build` script:
+
+<pre><code class="language-bash">./build
+</code></pre>
+
+
+Some helper scripts are provided as follows:
+1. `clean`: Clean the builds for both `dry` and `wet` workspaces.
+2. `configure`: Pull the submodules.
+
+</details>
+
+<blockquote>
+<p><strong>Warning</strong>
+If you run into issues with OpenMP on MacOS, you might need to use the <code>llvm</code> clang
+compiler as opposed to the Apple Clang compiler.</p>
+</blockquote>
+<h2 id="environment-setup">Environment Setup<a class="headerlink" href="#environment-setup" title="Permanent link">&para;</a></h2>
+<p>These steps also compile the python bindings. To use these python interfaces, first run:</p>
+<pre><code class="language-bash">workon
+</code></pre>
+<blockquote>
+<p><strong>Note</strong>
+For NVIDIA Jetson platforms (i.e., Orin, Xavier, and TX2), run <code>workon_jetson</code>.</p>
+</blockquote>
+<h3 id="user-guide">User Guide<a class="headerlink" href="#user-guide" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">pip install mkdocs mkdocs-material
+mkdocs serve
+</code></pre>
+<p>You should be able to view the documentation at this level over at <a href="http://127.0.0.1:8000/">localhost</a>.</p>
+<p>Utilize this documentation for tutorials and examples that use one or many of the submodules.</p>
+<p>Note: The documentation is stored using git lfs. You may need to run the
+following in order to make sure it is pulled correctly:</p>
+<pre><code>cd docs
+git lfs install
+git lfs pull
+</code></pre>
+<h2 id="authors">Authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h2>
+<p>Kshitij Goel, Wennie Tabib</p>
+<h2 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="https://github.com/OrebroUniversity/perception_oru-release"><code>ndt_map</code></a>: BSD License, Copyright (c) 2010, AASS Research Center, Orebro University.</li>
+<li><a href="https://github.com/OctoMap/octomap"><code>octomap</code></a>: New BSD License, Copyright (c) 2009-2013, K.M. Wurm and A. Hornung, University of Freiburg.</li>
+<li><a href="https://github.com/utiasSTARS/liegroups"><code>liegroups</code></a>: The MIT License, Copyright (c) 2017 Lee Clement.</li>
+<li><a href="https://github.com/isl-org/Open3D"><code>Open3D</code></a>: The MIT License (MIT), Copyright (c) 2018-2023 www.open3d.org.</li>
+<li><a href="https://gitlab.com/libeigen/eigen"><code>Eigen</code></a>: Mozilla Public License, v. 2.0.</li>
+<li><code>CUDA</code>, <code>cuBLAS</code>, <code>cuSOLVER</code>: Copyright (c) 2022-2023, NVIDIA CORPORATION.</li>
+</ol>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<pre><code>BSD 3-Clause License
+
+Copyright (c) 2023, Resilient Intelligent Systems Laboratory
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      
+    
+  </body>
+</html>

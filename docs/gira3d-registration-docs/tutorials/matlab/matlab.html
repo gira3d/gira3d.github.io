@@ -1,0 +1,781 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../gira3d-benchmarking-docs/tutorials/ndtmap-py-tut/ndtmap-py-tut.html">
+      
+      
+        <link rel="next" href="../python/python.html">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.17">
+    
+    
+      
+        <title>MATLAB - GIRA3D Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#matlab" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="GIRA3D Docs" class="md-header__button md-logo" aria-label="GIRA3D Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GIRA3D Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MATLAB
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gira3d/gira3d-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gira3d/gira3d-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="GIRA3D Docs" class="md-nav__button md-logo" aria-label="GIRA3D Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    GIRA3D Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gira3d/gira3d-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    gira3d/gira3d-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Reconstruction Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Reconstruction Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gira3d-reconstruction-docs/tutorials/sogmm-tut/sogmm-tut.html" class="md-nav__link">
+        Point Cloud Modeling using Self-Organizing Gaussian Mixture Models (SOGMM)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gira3d-benchmarking-docs/tutorials/octomap-py-tut/octomap-py-tut.html" class="md-nav__link">
+        (Intensity) OctoMap Python Bindings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gira3d-benchmarking-docs/tutorials/ndtmap-py-tut/ndtmap-py-tut.html" class="md-nav__link">
+        (Intensity) NDTMap Python Bindings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Registration Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Registration Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MATLAB
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="matlab.html" class="md-nav__link md-nav__link--active">
+        MATLAB
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-the-matlab-environment" class="md-nav__link">
+    Initialize the MATLAB Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-data" class="md-nav__link">
+    Download Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registering-a-pair-of-gmms" class="md-nav__link">
+    Registering a Pair of GMMs
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering a Pair of GMMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-explanation-of-the-script" class="md-nav__link">
+    Detailed Explanation of the Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tum-registration" class="md-nav__link">
+    TUM Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cave-registration" class="md-nav__link">
+    Cave Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mine-registration" class="md-nav__link">
+    Mine Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-the-loop-and-using-pose-graphs" class="md-nav__link">
+    Closing the loop and using Pose Graphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    Visualization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-systems" class="md-nav__link">
+    Operating Systems
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/python.html" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Occupancy Modeling Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Occupancy Modeling Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gira3d-occupancy-modeling-docs/tutorials/matlab/matlab.html" class="md-nav__link">
+        MATLAB
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../gira3d-occupancy-modeling-docs/tutorials/python/python.html" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialize-the-matlab-environment" class="md-nav__link">
+    Initialize the MATLAB Environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-data" class="md-nav__link">
+    Download Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registering-a-pair-of-gmms" class="md-nav__link">
+    Registering a Pair of GMMs
+  </a>
+  
+    <nav class="md-nav" aria-label="Registering a Pair of GMMs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detailed-explanation-of-the-script" class="md-nav__link">
+    Detailed Explanation of the Script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tum-registration" class="md-nav__link">
+    TUM Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cave-registration" class="md-nav__link">
+    Cave Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mine-registration" class="md-nav__link">
+    Mine Registration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-the-loop-and-using-pose-graphs" class="md-nav__link">
+    Closing the loop and using Pose Graphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    Visualization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-systems" class="md-nav__link">
+    Operating Systems
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="matlab">MATLAB<a class="headerlink" href="#matlab" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The following packages are used for the MATLAB tutorial:
+<a href="TODO">gmm_d2d_registration_matlab</a>,
+<a href="TODO">gmm_d2d_registration_examples</a>, and <a href="TODO">gmm</a>.</p>
+<p>The <code>gmm_d2d_registration_examples</code> package contains MATLAB scripts
+for registering a single pair of GMMs.  It also contains scripts for
+processing entire datasets.</p>
+<h2 id="initialize-the-matlab-environment">Initialize the MATLAB Environment<a class="headerlink" href="#initialize-the-matlab-environment" title="Permanent link">&para;</a></h2>
+<p>The tutorial uses <code>mtimesx</code>, which is compiled and build in the set of
+<code>dry</code> packages. A shared library is created and installed in the
+<code>dry/install</code> directory. In order to load this library properly, you
+will need to run the workon script to find it and add its containing
+directory to the MATLAB path.  To do this use the included <code>workon.m</code>
+file. This file also adds the matlab directories containing MATLAB
+scripts and functions to the path.</p>
+<pre><code class="language-matlab">matlab&gt; cd gira3d-registration
+matlab&gt; workon
+</code></pre>
+<h2 id="download-data">Download Data<a class="headerlink" href="#download-data" title="Permanent link">&para;</a></h2>
+<p>The <code>data</code> directory contains a script that you will need to execute
+in order to download all of the data associated with this tutorial.</p>
+<pre><code class="language-bash">shell&gt; pip install gdown 
+shell&gt; cd gira3d-registration/data
+shell&gt; ./download.sh
+</code></pre>
+<p>The complete dataset is quite large so be prepared for this to take
+some time.</p>
+<h2 id="registering-a-pair-of-gmms">Registering a Pair of GMMs<a class="headerlink" href="#registering-a-pair-of-gmms" title="Permanent link">&para;</a></h2>
+<p>The <code>data</code> directory contains a subdirectory called <code>pair</code> that
+contains two example GMMs: <code>source.gmm</code> and <code>target.gmm</code>. In order to
+run the GMM registration code, do the following in matlab.</p>
+<pre><code class="language-matlab">matlab&gt; cd wet/src/gmm_d2d_registration_examples/matlab
+matlab&gt; registration_example
+</code></pre>
+<p>Two MATLAB figures will also display with the registration
+output using the original pointclouds (note: not the GMMs).</p>
+<p><img alt="Before Registration" src="images/fig1.png" />
+<img alt="After Registration" src="images/fig2.png" /></p>
+<h3 id="detailed-explanation-of-the-script">Detailed Explanation of the Script<a class="headerlink" href="#detailed-explanation-of-the-script" title="Permanent link">&para;</a></h3>
+<p>First, an isoplanar registration is run to overcome local minima:</p>
+<pre><code class="language-matlab">x_opt = zeros(6,1);
+[x_opt, score] = isoplanar_registration(source_file, target_file, zeros(6,1));
+</code></pre>
+<p><code>x_opt</code> is the registration result consisting.
+A refinement step is run using the following function call:</p>
+<pre><code class="language-matlab">[x_opt, score] = anisotropic_registration(source_file, target_file, x_opt);
+</code></pre>
+<p>The 3x3 rotation matrix and translation vector are extracted using:</p>
+<pre><code class="language-matlab">Rotation = axang2rotm([x_opt(4:6) / norm(x_opt(4:6)); norm(x_opt(4:6))]');
+translation = x_opt(1:3);
+</code></pre>
+<p>An explanation of the visualization is found in <a href="#visualization">in the visualization section</a>.</p>
+<h2 id="tum-registration">TUM Registration<a class="headerlink" href="#tum-registration" title="Permanent link">&para;</a></h2>
+<p>To run the full TUM registration pipeline with pre-made GMMs, you can
+use the script in <code>gmm_d2d_registration_examples/matlab/run_tum_dataset.m</code>.</p>
+<pre><code class="language-matlab">matlab&gt; run_tum_dataset
+</code></pre>
+<p>The result will be the trajectory generated from frame-to-frame
+registration with the ground truth plotted on top.</p>
+<p><img alt="TUM Dataset" src="images/fig4.png" /></p>
+<h2 id="cave-registration">Cave Registration<a class="headerlink" href="#cave-registration" title="Permanent link">&para;</a></h2>
+<p>To run the cave dataset with pre-made GMMs, you can use the script in
+<code>gmm_d2d_registration_examples/matlab/run_cave_dataset.m</code>.</p>
+<pre><code class="language-matlab">matlab&gt; run_cave_dataset
+</code></pre>
+<p><img alt="Cave Dataset" src="images/fig5.png" /></p>
+<h2 id="mine-registration">Mine Registration<a class="headerlink" href="#mine-registration" title="Permanent link">&para;</a></h2>
+<p>To run the cave dataset with pre-made GMMs, you can use the script in
+<code>gmm_d2d_registration_examples/matlab/run_mine_dataset.m</code>.</p>
+<pre><code class="language-matlab">matlab&gt; run_mine_dataset
+</code></pre>
+<p><img alt="Mine Dataset" src="images/fig6.png" /></p>
+<h2 id="closing-the-loop-and-using-pose-graphs">Closing the loop and using Pose Graphs<a class="headerlink" href="#closing-the-loop-and-using-pose-graphs" title="Permanent link">&para;</a></h2>
+<p>Software is provided with an example of how to close the loop.</p>
+<pre><code>pose_graph_example
+</code></pre>
+<p>The result will be a video that looks like the following:</p>
+<video playsinline autoplay muted loop>
+  <source src="../movies/pose_graph_matlab.mp4" type="video/mp4">
+</video>
+
+<p>where ground truth is in white and the pose graph trajectory is shown
+in red or purple. Purple means a loop closure constraint was added.</p>
+<h2 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h2>
+<p>Scripts are provided to visualize GMMs. A GMM may be visualized by loading from
+file and using the <code>plot</code> function in the <code>GMM3.m</code> file. An example is
+provided below:</p>
+<pre><code class="language-matlab">matlab&gt; gmm = GMM3();
+matlab&gt; gmm.load('/path/to/data/rgbd_dataset_freiburg3_long_office_household/100_components/1200.gmm');
+matlab&gt; gmm.plot([1,0,0]) # Provide color for the GMM using [R, G, B] values between 0 and 1
+matlab&gt; pcld = load('/path/to/data/rgbd_dataset_freiburg3_long_office_household/pointclouds/1200.txt');
+matlab&gt; hold on; pcshow(pcld); colormap(flipud(jet));
+</code></pre>
+<p><img alt="Plotting the GMM on top of a pointcloud" src="images/fig3.png" /></p>
+<p>The number of sigmas on the covariance can be adjusted by opening the
+GMM3.m script and changing <code>nsigmas</code>. The alpha can be changed by
+updating the <code>alpha</code>. The color is supplied in the plot() function
+call.</p>
+<h2 id="operating-systems">Operating Systems<a class="headerlink" href="#operating-systems" title="Permanent link">&para;</a></h2>
+<p>These tutorials have been tested on the following operating systems:</p>
+<ul>
+<li>Ubuntu 20.04</li>
+<li>Ubuntu 18.04</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.b425cdc4.min.js"></script>
+      
+    
+  </body>
+</html>
